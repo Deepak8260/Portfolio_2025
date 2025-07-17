@@ -1,0 +1,112 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c; /* Dark background */
+    color: #e2e8f0; /* Light text for readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add this new class for the hero section */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    height: 100%;
+}
+.section-heading {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+    font-weight: 800; /* Extra bold */
+    color: #63b3ed; /* Light blue for headings */
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0%; /* Initial width for animation */
+    height: 5px;
+    background-color: #38b2ac; /* Teal-500 */
+    border-radius: 9999px;
+    transition: width 0.5s ease-out; /* Animation for underline */
+}
+.section-heading.animate::after {
+    width: 70%; /* Final width on animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0; /* Hidden by default */
+}
+.animate-fade-in-delay-1 { animation-delay: 0.2s; }
+.animate-fade-in-delay-2 { animation-delay: 0.4s; }
+.animate-fade-in-delay-3 { animation-delay: 0.6s; }
+.animate-fade-in-delay-4 { animation-delay: 0.8s; }
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Card hover effect */
+.card-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-effect:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Darker shadow for dark theme */
+}
+
+/* Scroll reveal class */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Background pulse animations */
+@keyframes pulse-slow {
+    0% { transform: scale(1); opacity: 0.05; }
+    50% { transform: scale(1.05); opacity: 0.1; }
+    100% { transform: scale(1); opacity: 0.05; }
+}
+.animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+}
+.animate-pulse-slow-reverse {
+    animation: pulse-slow 6s ease-in-out infinite reverse;
+}
+
+/* Progress bar animation */
+@keyframes fillProgress {
+    from { width: 0%; }
+    to { width: var(--progress-width); }
+}
+.progress-bar-fill {
+    animation: fillProgress 1.5s ease-out forwards;
+}
