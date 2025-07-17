@@ -2,18 +2,6 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #1a202c; /* Dark background */
     color: #e2e8f0; /* Light text for readability */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Add this new class for the hero section */
-.hero-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
-    height: 100%;
 }
 .section-heading {
     position: relative;
